@@ -35,6 +35,7 @@ PRODUCT_PACKAGES += \
     FrameworksResPenang \
     LineageSystemUIPenang \
     SettingsResPenang \
+    NfcResPenang \
     SettingsProviderResPenang \
     SystemUIResPenang \
     RegulatoryInfoOverlayXT2335-5
