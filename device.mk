@@ -33,6 +33,7 @@ PRODUCT_SOONG_NAMESPACES += \
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworksResPenang \
+    NfcResPenang \
     SettingsResPenang \
     SettingsProviderResPenang \
     SystemUIResPenang \
