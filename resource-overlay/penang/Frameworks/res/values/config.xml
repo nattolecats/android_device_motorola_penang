@@ -135,14 +135,15 @@
          @see https://www.w3.org/TR/SVG/paths.html#PathData
          -->
     <string translatable="false" name="config_mainBuiltInDisplayCutout">
-        M -35,0
-        L 35,0
-		L 35,105
-		L -35,105
-		Z
-	</string>
+        M 0,0
+        h -28.9
+        v 85
+        h 59.5
+        v -85
+        Z
+    </string>
 
-	<!-- Indicate whether to allow the device to suspend when the screen is off
+    <!-- Indicate whether to allow the device to suspend when the screen is off
          due to the proximity sensor.  This resource should only be set to true
          if the sensor HAL correctly handles the proximity sensor as a wake-up source.
          Otherwise, the device may fail to wake out of suspend reliably.
@@ -175,6 +176,23 @@
          and Strength as defined in Authenticators.java -->
     <array name="config_biometric_sensors" translatable="false" >
         <item>0:2:15</item> <!-- ID0:Fingerprint:Strong -->
+    </array>
+
+    <!-- Indicates whether device has a power button fingerprint sensor. -->
+    <bool name="config_is_powerbutton_fps">true</bool>
+
+    <!-- An array of arrays of side fingerprint sensor properties relative to each display.
+         Note: this value is temporary and is expected to be queried directly
+         from the HAL in the future. -->
+    <array name="config_sfps_sensor_props" translatable="false">
+        <item>@array/config_sfps_sensor_props_0</item>
+    </array>
+
+    <array name="config_sfps_sensor_props_0" translatable="false">
+        <item></item> <!--item>displayId</item-->
+        <item>1080</item> <!--item>sensorLocationX</item-->
+        <item>510</item> <!--item>sensorLocationY</item-->
+        <item>115</item> <!--item>sensorRadius</item-->
     </array>
 
     <!-- Power Management: Specifies whether to decouple the interactive state of the
@@ -241,9 +259,6 @@
     <!-- True if the device supports system navigation keys. -->
     <bool name="config_supportSystemNavigationKeys">true</bool>
 
-    <!-- Specify if the fingerprint hardware support gestures-->
-    <bool name="config_fingerprintSupportsGestures">true</bool>
-
     <!-- ComponentName of a dream to show whenever the system would otherwise have
          gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
          try to start this dream if possible.  The dream should typically call startDozing()
@@ -261,14 +276,14 @@
     <!-- Whether the always on display mode is available. This should only be enabled
          on devices where the display has been tuned to be power efficient in DOZE and/or
          DOZE_SUSPEND states. -->
-    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+    <bool name="config_dozeAlwaysOnDisplayAvailable">false</bool>
 
     <!-- Control whether the always on display mode is enabled by default. This value will be used
          during initialization when the setting is still null. -->
     <bool name="config_dozeAlwaysOnEnabled">false</bool>
 
     <!-- MMS user agent string -->
-    <string name="config_mms_user_agent" translatable="false">motog715G</string>
+    <string name="config_mms_user_agent" translatable="false">motog53j5G</string>
     <!-- MMS user agent profile url -->
     <string name="config_mms_user_agent_profile_url" translatable="false">http://uaprof.motorola.com/phoneconfig/motov1/Profile/motov1.rdf</string>
 

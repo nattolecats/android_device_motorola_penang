@@ -1,19 +1,18 @@
 # Bluetooth
-bluetooth.device.default_name=moto g71 5G
+bluetooth.device.default_name=moto g53j 5G
 
 # Camera
-persist.vendor.camera.physical.num=4
+persist.vendor.camera.physical.num=3
 
 # Motorola
 ro.mot.build.customerid=global
 
 # NFC
-ro.vendor.hw.nfc=st
+ro.vendor.hw.nfc=ese_nq
 
 # SOC
-ro.soc.model=SM6375
+ro.soc.model=SM4350
 
 # Surfaceflinger
-ro.sf.lcd_density=420
 ro.surface_flinger.has_HDR_display=false
 ro.surface_flinger.has_wide_color_display=false

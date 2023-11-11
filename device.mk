@@ -5,15 +5,15 @@
 #
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2400
-TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 1200
+TARGET_SCREEN_WIDTH := 720
 
 # Screen
-TARGET_SCREEN_DENSITY := 420
+TARGET_SCREEN_DENSITY := 280
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := 420dpi
+PRODUCT_AAPT_PREF_CONFIG := 280dpi
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
 PRODUCT_SHIPPING_API_LEVEL := 30
@@ -21,16 +21,22 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 # Inherit from motorola sm6375-common
 $(call inherit-product, device/motorola/sm6375-common/common.mk)
 
+# Enable Virtual A/B
+TARGET_IS_VAB := true
+
 # Overlays
 PRODUCT_PACKAGES += \
-    FrameworksResCorfur \
-    LineageSystemUICorfur \
-    SettingsProviderResCorfur \
-    SystemUIResCorfur
+    FrameworksResPenang \
+    LineageSystemUIPenang \
+    SettingsProviderResPenang \
+    SystemUIResPenang
 
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(LOCAL_PATH)/audio/audio_ext_spkr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_ext_spkr.conf \
+    $(LOCAL_PATH)/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
+    $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
 
 # Fingerprint
@@ -40,9 +46,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
-    $(LOCAL_PATH)/configs/idc/uinput_nav.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput_nav.idc \
+    $(LOCAL_PATH)/configs/idc/uinput-fpsensor.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpsensor.idc \
     $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
-    $(LOCAL_PATH)/configs/keylayout/uinput_nav.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput_nav.kl
+    $(LOCAL_PATH)/configs/keylayout/uinput-fpsensor.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpsensor.kl
 
 # Init
 $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/hw/*.rc),\
@@ -65,13 +71,19 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.2-service \
     android.hardware.nfc@1.2.vendor \
-    android.hardware.nfc@1.2-service.st \
     android.hardware.secure_element@1.2.vendor \
     com.android.nfc_extras \
     libchrome.vendor \
-    Tag \
-    nfc_nci.st21nfc.default
+    NfcNci \
+    SecureElement \
+    Tag
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
+    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/motorola/corfur/corfur-vendor.mk)
+$(call inherit-product, vendor/motorola/penang/penang-vendor.mk)
