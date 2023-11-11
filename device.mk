@@ -24,6 +24,10 @@ $(call inherit-product, device/motorola/sm6375-common/common.mk)
 # Enable Virtual A/B
 TARGET_IS_VAB := true
 
+# Soong
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworksResPenang \
