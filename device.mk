@@ -30,7 +30,8 @@ PRODUCT_PACKAGES += \
     LineageSystemUIPenang \
     SettingsProviderResPenang \
     SystemUIResPenang \
-    EuiccOverlayPenang
+    EuiccOverlayPenang \
+    RegulatoryInfoOverlayPenang
 
 # Audio
 PRODUCT_COPY_FILES += \
