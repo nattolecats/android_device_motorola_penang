@@ -29,7 +29,8 @@ PRODUCT_PACKAGES += \
     FrameworksResPenang \
     LineageSystemUIPenang \
     SettingsProviderResPenang \
-    SystemUIResPenang
+    SystemUIResPenang \
+    EuiccOverlayPenang
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -67,6 +68,11 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/*.rc),\
         $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/init/$(notdir $f)))
 $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
         $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/bin/$(notdir $f)))
+
+# The default value of this variable is false and should only be set to true when
+# the device allows users to retain eSIM profiles after factory reset of user data.
+PRODUCT_PRODUCT_PROPERTIES += \
+    masterclear.allow_retain_esim_profiles_after_fdr=true
 
 # IPACM
 PRODUCT_PACKAGES += \
