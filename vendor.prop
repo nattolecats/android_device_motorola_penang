@@ -4,6 +4,9 @@ bluetooth.device.default_name=moto g53j 5G
 # Camera
 persist.vendor.camera.physical.num=3
 
+# FM
+vendor.qcom.bluetooth.soc=cherokee
+
 # Motorola
 ro.mot.build.customerid=global
 

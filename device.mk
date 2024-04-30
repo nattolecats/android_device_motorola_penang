@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+TARGET_HAS_FM := true
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1200
 TARGET_SCREEN_WIDTH := 720
