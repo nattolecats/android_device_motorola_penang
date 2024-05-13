@@ -128,5 +128,11 @@ PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json \
     system/core/libprocessgroup/profiles/cgroups.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json
 
+# VNDK
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v30/arm64/arch-arm64-armv8-a/shared/vndk-sp/libbase.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libbase-v30.so \
+    prebuilts/vndk/v34/arm64/arch-arm64-armv8-a/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcutils-v34.so \
+    prebuilts/vndk/v34/arm64/arch-arm64-armv8-a/shared/vndk-core/libbinder.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libbinder-v34.so
+
 # Inherit from vendor blobs
 $(call inherit-product, vendor/motorola/penang/penang-vendor.mk)

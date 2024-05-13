@@ -64,6 +64,11 @@ function blob_fixup() {
         vendor/etc/vintf/manifest/vendor.dolby.media.c2@1.0-service.xml)
             sed -ni '/default1/!p' "${2}"
             ;;
+        vendor/bin/hw/vendor.nxp.hardware.nfc@2.0-service)
+            "${PATCHELF}" --add-needed "libbase-v30.so" "${2}"
+            "${PATCHELF}" --add-needed "libbinder-v34.so" "${2}"
+            "${PATCHELF}" --replace-needed "libcutils.so" "libcutils-v34.so" "${2}"
+            ;;
     esac
 }
 
