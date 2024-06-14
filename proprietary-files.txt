@@ -413,9 +413,8 @@ system_ext/framework/com.android.hotwordenrollment.common.util.jar
 #system_ext/etc/permissions/com.motorola.androidx.camera.extensions.xml
 
 # NFC
-vendor/etc/libnfc-nci.conf
-vendor/etc/libnfc-nci_SN100.conf
-vendor/etc/libnfc-mtp-SN100.conf
+vendor/etc/libnfc-nci_SN100.conf:vendor/etc/libnfc-nci.conf
+vendor/etc/libnfc-mtp-SN100-UICC.conf
 vendor/lib/libsn100u_fw.so
 vendor/lib64/libsn100u_fw.so
 
