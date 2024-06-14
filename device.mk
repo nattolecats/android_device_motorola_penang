@@ -123,6 +123,26 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
 
+# NFC - NXP
+PRODUCT_PACKAGES += \
+    NQNfcNci \
+    com.nxp.nfc.nq \
+    nfc_nci.nqx.default.hw \
+    vendor.nxp.hardware.nfc@2.0.vendor \
+    vendor.nxp.hardware.nfc@2.0-service
+
+PRODUCT_PACKAGES += \
+    jcos_nq_client \
+    ls_nq_client \
+    se_nq_extn_client
+
+PRODUCT_SOONG_NAMESPACES += \
+    vendor/nxp/opensource/commonsys/packages/apps/Nfc \
+    vendor/nxp/opensource/commonsys/external/libnfc-nci \
+    vendor/nxp/opensource/interfaces \
+    vendor/nxp/opensource/halimpl \
+    vendor/nxp/opensource/hidlimpl
+
 # Perf
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json \
