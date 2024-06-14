@@ -14,7 +14,6 @@ ro.mot.build.customerid=global
 # NFC
 ro.vendor.hw.nfc=ese_nq
 ro.hardware.nfc_nci=pn54x
-persist.nfc_cfg.config_file_name=libnfc-nci_SN100.conf
 
 # SOC
 ro.soc.model=SM4350
