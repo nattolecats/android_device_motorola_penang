@@ -31,3 +31,6 @@ BUILD_FINGERPRINT := motorola/penang_g/penang:14/U1TPS34M.29-83-1/295da:user/rel
 
 # Gapps
 TARGET_USES_MINI_GAPPS := true
+
+# Updater
+TARGET_EXCLUDE_UPDATER := true
