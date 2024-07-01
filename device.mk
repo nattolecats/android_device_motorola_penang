@@ -100,9 +100,6 @@ PRODUCT_PACKAGES += \
     qti-telephony-hidl-wrapper-prd \
     qti_telephony_hidl_wrapper_prd.xml
 
-PRODUCT_BOOT_JARS += \
-    qti-telephony-common
-
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
