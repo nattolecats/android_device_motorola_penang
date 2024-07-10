@@ -94,3 +94,7 @@ service capsense_reset /vendor/bin/capsense_reset
 
 on property:sys.boot_completed=1
     start capsense_reset
+
+# Bind SB felica configs if SB SKU
+on property:sys.boot_completed=1 && property:ro.boot.hardware.sku=XT2335-4
+    mount none /product/etc/felica_sb /product/etc/felica bind
