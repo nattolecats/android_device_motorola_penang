@@ -5,5 +5,5 @@
 
 runtime_resource_overlay {
     name: "RegulatoryInfoOverlayPenangSB",
-    product_specific: true,
+    vendor: true,
 }
