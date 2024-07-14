@@ -146,6 +146,7 @@ vendor/lib64/libcom.qti.chinodeutils.so
 vendor/lib64/libipebpsstriping.so
 vendor/lib64/libipebpsstriping170.so
 vendor/lib64/libjpege.so
+vendor/lib64/libloc_api_wds.so
 vendor/lib64/liblowlight_ai_portrait.arcsoft.so
 vendor/lib64/libmfec.so
 vendor/lib64/libmmcamera_bestats.so
@@ -375,6 +376,9 @@ vendor/lib64/camera/com.qti.tuned.mot_penang_s5kjn1.bin
 # Display calibration data
 vendor/etc/qdcm_calib_data_mipi_mot_vid_csot_hd_653_720p_120.xml
 vendor/etc/qdcm_calib_data_mipi_mot_vid_djn_hd_653_720p_120.xml
+
+# DRM
+vendor/lib64/liboemcrypto.so
 
 # Fingerprint
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-fpc
