@@ -381,12 +381,19 @@ vendor/etc/qdcm_calib_data_mipi_mot_vid_djn_hd_653_720p_120.xml
 vendor/lib64/liboemcrypto.so
 
 # Fingerprint
-vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-fpc
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-chipone
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-fpc
+vendor/bin/hw/chipone_ident
 vendor/bin/hw/fpc_ident
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-fpc2.rc
+vendor/bin/fpc_tee_test
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-chipone2.rc
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-fpc2.rc
+-vendor/etc/vintf/manifest/manifest_IMoto_Fingerprint.xml
+vendor/lib64/hw/chipone.fingerprint.default.so
 vendor/lib64/com.fingerprints.extension@1.0.so
+vendor/lib64/libfp_ext_svc2.so
+vendor/lib64/libfptcmd.so
+vendor/lib64/vendor.fpsensor.hardware.fpsensorhidlsvc@2.0.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
 # GPS
