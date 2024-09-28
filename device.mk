@@ -36,7 +36,6 @@ PRODUCT_PACKAGES += \
     LineageSystemUIPenang \
     SettingsProviderResPenang \
     SystemUIResPenang \
-    EuiccOverlayPenang \
     RegulatoryInfoOverlayPenang
 
 PRODUCT_PACKAGES += \
