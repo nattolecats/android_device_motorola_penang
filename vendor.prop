@@ -8,9 +8,6 @@ persist.vendor.camera.physical.num=3
 vendor.qcom.bluetooth.soc=cherokee
 ro.vendor.fm.use_audio_session=true
 
-# LowRam
-ro.config.low_ram=true
-
 # Motorola
 ro.mot.build.customerid=global
 
