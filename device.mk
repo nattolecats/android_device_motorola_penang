@@ -36,12 +36,17 @@ PRODUCT_PACKAGES += \
     SettingsResPenang \
     SettingsProviderResPenang \
     SystemUIResPenang \
-    RegulatoryInfoOverlayPenang
+    RegulatoryInfoOverlayXT2335-5
 
 PRODUCT_PACKAGES += \
     FrameworksResPenangSB \
     SettingsProviderResPenangSB \
-    RegulatoryInfoOverlayPenangSB
+    RegulatoryInfoOverlayXT2335-4
+
+PRODUCT_PACKAGES += \
+    RegulatoryInfoOverlayXT2335-1 \
+    RegulatoryInfoOverlayXT2335-2 \
+    RegulatoryInfoOverlayXT2335-3
 
 # Audio
 PRODUCT_COPY_FILES += \

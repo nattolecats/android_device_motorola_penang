@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "RegulatoryInfoOverlayPenang",
+    name: "RegulatoryInfoOverlayXT2335-4",
     vendor: true,
 }
