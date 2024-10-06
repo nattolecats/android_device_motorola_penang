@@ -68,7 +68,10 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/felica_sb,$(TARGET_COPY_OUT_PRODUCT)/etc/felica_sb)
 
 # Recovery
-#    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,$(TARGET_COPY_OUT_RECOVERY)/root)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc \
+    $(LOCAL_PATH)/recovery/root/init.recovery.usb.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.usb.rc \
+    $(LOCAL_PATH)/recovery/root/load_ts_firmware.sh:$(TARGET_COPY_OUT_RECOVERY)/root/load_ts_firmware.sh
 
 # Fingerprint
 PRODUCT_PACKAGES += \
