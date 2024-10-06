@@ -34,6 +34,7 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     FrameworksResPenang \
     LineageSystemUIPenang \
+    SettingsResPenang \
     SettingsProviderResPenang \
     SystemUIResPenang \
     RegulatoryInfoOverlayPenang
