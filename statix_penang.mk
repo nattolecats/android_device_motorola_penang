@@ -11,19 +11,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from penang device
 $(call inherit-product, device/motorola/penang/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common StatiXOS stuff.
+$(call inherit-product, vendor/statix/config/common.mk)
+$(call inherit-product, vendor/statix/config/gsm.mk)
 
-PRODUCT_NAME := lineage_penang
+TARGET_BOOT_ANIMATION_RES := 720
+INCLUDE_PIXEL_LAUNCHER := true
+PRODUCT_NAME := statix_penang
 PRODUCT_DEVICE := penang
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := moto g53j 5G
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_PRODUCT=penang_g \
-    PRIVATE_BUILD_DESC="penang_g-user 14 U1TPS34M.29-83-1 295da release-keys"
-
-BUILD_FINGERPRINT := motorola/penang_g/penang:14/U1TPS34M.29-83-1/295da:user/release-keys

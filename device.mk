@@ -33,7 +33,7 @@ PRODUCT_SOONG_NAMESPACES += \
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworksResPenang \
-    LineageSystemUIPenang \
+    SettingsResPenang \
     SettingsProviderResPenang \
     SystemUIResPenang \
     RegulatoryInfoOverlayPenang
@@ -41,7 +41,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FrameworksResPenangSB \
     SettingsProviderResPenangSB \
-    RegulatoryInfoOverlayPenangSB    
+    RegulatoryInfoOverlayPenangSB
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -60,6 +60,9 @@ PRODUCT_COPY_FILES += \
 # Felica
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/felica_sb,$(TARGET_COPY_OUT_PRODUCT)/etc/felica_sb)
+
+# Recovery
+#    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,$(TARGET_COPY_OUT_RECOVERY)/root)
 
 # Fingerprint
 PRODUCT_PACKAGES += \
