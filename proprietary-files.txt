@@ -421,9 +421,6 @@ vendor/lib64/vendor.qti.esepowermanager@1.1.so
 # OEM
 vendor/etc/vhw.xml
 
-# RIL
--system_ext/framework/qti-telephony-common.jar
-
 # Sensors
 vendor/lib64/sensors.moto.so
 vendor/lib64/sensors.ssc.so
