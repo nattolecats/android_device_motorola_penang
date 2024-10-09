@@ -23,8 +23,8 @@ static const variant_info_t jp_info = {
 
     .model = "moto g53j 5G",
     .name = "penang_g",
-    .build_fingerprint = "motorola/penang_g/penang:14/U1TPS34M.29-83-1/295da:user/release-keys",
-    .build_description = "penang_g-user 14 U1TPS34M.29-83-1 295da release-keys",
+    .build_fingerprint = "motorola/penang_g/penang:14/U1TP34M.29-83-9/05314:user/release-keys",
+    .build_description = "penang_g-user 14 U1TP34M.29-83-9 05314 release-keys",
 };
 
 static const variant_info_t ym_info = {
