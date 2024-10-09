@@ -12,30 +12,69 @@ include device/motorola/sm6375-common/BoardConfigCommon.mk
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := penang
 
+# Clang
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+TARGET_KERNEL_CLANG_VERSION := r450784e
+
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.hab.product=penang
-TARGET_KERNEL_CONFIG := vendor/holi-qgki_defconfig
-
-BOARD_KERNEL_BINARIES := kernel
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)-kernel/dtbo.img
-TARGET_FORCE_PREBUILT_KERNEL := true
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)-kernel/kernel
-TARGET_KERNEL_CONFIG := holi_QGKI
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)-kernel/dtb.img
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)-kernel/dtb.img:$(TARGET_COPY_OUT)/dtb.img \
-    $(DEVICE_PATH)-kernel/kernel:kernel \
-    $(call find-copy-subdir-files,*,$(DEVICE_PATH)-kernel/ramdisk-modules/,$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/modules) \
-    $(call find-copy-subdir-files,*,$(DEVICE_PATH)-kernel/vendor-modules/,$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules)
+TARGET_KERNEL_CONFIG := vendor/penang_defconfig
 
 # Kernel Modules
-BOARD_VENDOR_KERNEL_MODULES := \
-    $(wildcard $(DEVICE_PATH)-kernel/vendor-modules/*.ko)
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)-kernel/vendor-modules/modules.load))
-BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)-kernel/vendor-modules/modules.blocklist
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)-kernel/ramdisk-modules/modules.load))
-BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(BOOT_KERNEL_MODULES)
+BOARD_VENDOR_KERNEL_MODULES_LOAD := \
+    tcpc_sgm7220.ko \
+    tcpc_rt1711h.ko \
+    wcd_core_dlkm.ko \
+    wcd938x_dlkm.ko \
+    q6_notifier_dlkm.ko \
+    platform_dlkm.ko \
+    stub_dlkm.ko \
+    aw87xxx_dlkm.ko \
+    wcd938x_slave_dlkm.ko \
+    swr_ctrl_dlkm.ko \
+    swr_dlkm.ko \
+    wcd937x_dlkm.ko \
+    camera.ko \
+    aw882xx_acf.ko \
+    q6_dlkm.ko \
+    wsa881x_analog_dlkm.ko \
+    q6_pdr_dlkm.ko \
+    wcd9xxx_dlkm.ko \
+    wcd937x_slave_dlkm.ko \
+    mbhc_dlkm.ko \
+    pinctrl_lpi_dlkm.ko \
+    aw882xx_k419.ko \
+    machine_dlkm.ko \
+    rx_macro_dlkm.ko \
+    va_macro_dlkm.ko \
+    apr_dlkm.ko \
+    bolero_cdc_dlkm.ko \
+    tx_macro_dlkm.ko \
+    snd_event_dlkm.ko \
+    adsp_loader_dlkm.ko \
+    nfc_i2c.ko \
+    native_dlkm.ko \
+    rmnet_core.ko \
+    rmnet_ctl.ko \
+    rmnet_offload.ko \
+    rmnet_shs.ko \
+    fpsensor_spi_tee.ko \
+    fpc1020_mmi.ko \
+    mmi_sys_temp.ko \
+    rt_pd_manager.ko \
+    nova_0flash_mmi.ko \
+    focaltech_0flash_v2_mmi.ko
+
+BOOT_KERNEL_MODULES := \
+    tcpc_sgm7220.ko \
+    tcpc_rt1711h.ko \
+    rt_pd_manager.ko \
+    focaltech_0flash_v2_mmi.ko \
+    nova_0flash_mmi.ko
+
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(BOARD_VENDOR_KERNEL_MODULES_LOAD)
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(BOOT_KERNEL_MODULES)
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
